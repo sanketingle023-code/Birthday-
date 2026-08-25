@@ -4,22 +4,176 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Gauri ❤️</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ff3f8e,#8e2de2);color:white;display:flex;justify-content:center;align-items:center;padding:20px}.box{width:100%;max-width:520px;padding:28px 20px;text-align:center;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.25);border-radius:25px;box-shadow:0 15px 45px rgba(0,0,0,.25);backdrop-filter:blur(8px)}.heart{font-size:60px}h1{font-size:28px;margin:12px 0 18px}p{font-size:16px;line-height:1.8}input{width:100%;padding:14px 16px;border:0;border-radius:30px;font-size:16px;outline:none;margin-top:10px}button{margin-top:16px;padding:14px 24px;border:0;border-radius:30px;background:white;color:#c2185b;font-size:17px;font-weight:bold}#surprise{display:none}.photo{width:100%;max-width:400px;max-height:520px;object-fit:cover;border-radius:20px;display:block;margin:0 auto 20px}
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#ff4f91,#9b2bbd);
+  color:white;
+  text-align:center;
+}
+
+.box{
+  width:90%;
+  max-width:500px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+#surprise{
+  display:none;
+}
+
+.heart{
+  font-size:55px;
+  margin:20px 0;
+}
+
+h1{
+  font-size:30px;
+}
+
+p{
+  font-size:17px;
+  line-height:1.8;
+}
+
+input{
+  width:90%;
+  padding:14px;
+  border:0;
+  border-radius:25px;
+  font-size:16px;
+  margin:15px 0;
+  text-align:center;
+}
+
+button{
+  padding:14px 25px;
+  border:0;
+  border-radius:25px;
+  background:white;
+  color:#d62b83;
+  font-size:17px;
+  font-weight:bold;
+}
+
+button:active{
+  transform:scale(.95);
+}
+
+.photo{
+  width:100%;
+  max-width:400px;
+  border-radius:20px;
+  margin:15px auto;
+  display:block;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+#wrong{
+  display:none;
+  color:#fff;
+}
 </style>
 </head>
+
 <body>
+
 <div class="box" id="login">
-<div class="heart">🔐❤️</div><h1>For My Sweetheart</h1>
-<p>This little surprise is only for you, Gauri. 🥺</p>
-<input id="pass" type="password" placeholder="Enter password">
-<button onclick="openSurprise()">Open My Surprise 💕</button>
-<p id="wrong" style="display:none">Wrong password 😜❤️</p>
+
+  <div class="heart">🔐❤️</div>
+
+  <h1>For My Sweetheart</h1>
+
+  <p>
+    This little surprise is only for you, Gauri ❤️
+  </p>
+
+  <input
+    id="pass"
+    type="password"
+    placeholder="Enter password"
+  >
+
+  <br>
+
+  <button onclick="openSurprise()">
+    Open My Surprise 💕
+  </button>
+
+  <p id="wrong">
+    Wrong password 😜❤️
+  </p>
+
 </div>
+
+
 <div class="box" id="surprise">
-<img class="photo" src="birthday-photo.png" alt="Birthday surprise photo">
-<div class="heart">❤️</div><h1>Happy Birthday Gauri! 🎂</h1>
-<p>Hey Sweetheart,<br><br>Aaj ka din mere liye bhi special hai, kyunki aaj meri favourite person ka birthday hai. 🥺❤️<br><br>Tumhari smile hamesha aisi hi bani rahe, tum hamesha khush raho, aur tumhari har wish poori ho. ✨<br><br>Sach bolu toh gift mujhe mila hai — tumhare form mein. ❤️<br><br>Happy Birthday meri Sweetheart! 🎂💕<br><br>Always yours,<br><b>Sanket ❤️</b></p>
+
+  <div class="heart">❤️</div>
+
+  <h1>Happy Birthday Gauri! 🎂</h1>
+
+  <img class="photo" src="birthday-photo.png">
+
+  <p>
+    Hey Sweetheart, ❤️
+    <br><br>
+
+    Aaj ka din mere liye bhi special hai,
+    kyunki aaj meri favourite person ka birthday hai. 🥺❤️
+    <br><br>
+
+    Tumhari smile hamesha aisi hi bani rahe,
+    tum hamesha khush raho,
+    aur tumhari har wish poori ho. ✨
+    <br><br>
+
+    Sach bolu to gift mujhe mila hai —
+    <b>tumhare form mein.</b> ❤️
+    <br><br>
+
+    Happy Birthday meri Sweetheart! 🎂💕
+    <br><br>
+
+    Always yours,
+    <br>
+    <b>Sanket ❤️</b>
+  </p>
+
 </div>
-<script>function openSurprise(){const password=document.getElementById('pass').value;if(password==='Gauri129'){document.getElementById('login').style.display='none';document.getElementById('surprise').style.display='block'}else{document.getElementById('wrong').style.display='block'}}</script>
-</body></html>
+
+
+<script>
+
+function openSurprise(){
+
+  const password = document.getElementById("pass").value;
+
+  /* YAHAN APNA PASSWORD LIKHNA */
+  const correctPassword = "gauri29";
+
+  if(password === correctPassword){
+
+    document.getElementById("login").style.display="none";
+    document.getElementById("surprise").style.display="block";
+
+  }else{
+
+    document.getElementById("wrong").style.display="block";
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
