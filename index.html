@@ -1,117 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For My Sweetheart ❤️</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
 body{
-  font-family:Arial,sans-serif;
-  background:#08000f;
+  margin:0;
+  background:linear-gradient(135deg,#ff4f81,#7b1fa2);
   color:white;
-  overflow:hidden;
-}
-
-.screen{
-  position:fixed;
-  inset:0;
-  display:none;
+  font-family:Arial,sans-serif;
+  text-align:center;
+  min-height:100vh;
+  display:flex;
   justify-content:center;
   align-items:center;
-  text-align:center;
-  padding:25px;
-  overflow:hidden;
 }
 
-.screen.active{
-  display:flex;
-  animation:fade .8s ease;
+.box{
+  width:90%;
+  max-width:400px;
+  padding:30px;
 }
 
-@keyframes fade{
-  from{opacity:0}
-  to{opacity:1}
-}
-
-.content{
-  width:100%;
-  max-width:420px;
-  z-index:5;
-}
-
-h1{
-  font-size:38px;
-  margin-bottom:18px;
-}
-
-h2{
-  font-size:30px;
-  margin-bottom:15px;
-}
-
-p{
-  font-size:18px;
-  line-height:1.7;
-  color:#ffe8f3;
-}
-
-button{
-  border:none;
-  padding:15px 28px;
-  border-radius:50px;
-  margin-top:28px;
-  font-size:17px;
-  font-weight:bold;
-  background:white;
-  color:#9b176b;
-  box-shadow:0 8px 25px rgba(255,255,255,.2);
-}
-
-button:active{
-  transform:scale(.94);
-}
-
-/* PASSWORD */
-#lock{
-  display:flex;
-  background:radial-gradient(circle,#76145a,#16001d 70%);
-}
-
-.lock-icon{
-  font-size:65px;
-  margin-bottom:15px;
-}
+h1{font-size:36px;}
+p{font-size:18px;line-height:1.7;}
 
 input{
-  width:90%;
-  max-width:300px;
-  padding:15px;
-  margin-top:20px;
-  border:none;
+  width:85%;
+  padding:14px;
+  border:0;
   border-radius:30px;
   text-align:center;
   font-size:17px;
-  outline:none;
 }
 
-.error{
-  margin-top:15px;
-  color:#ff9fc8;
+button{
+  margin-top:20px;
+  padding:14px 25px;
+  border:0;
+  border-radius:30px;
+  background:white;
+  color:#c2185b;
+  font-size:17px;
+  font-weight:bold;
+}
+
+#surprise{
   display:none;
-}
-
-/* FIRST */
-#screen1{
-  background:radial-gradient(circle,#6d164e,#17001f 65%);
 }
 
 .heart{
   font-size:65px;
-  animation:beat 1.2s infinite
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="login">
+
+  <div class="heart">🔐❤️</div>
+
+  <h1>For My Sweetheart</h1>
+
+  <p>
+    This little surprise is only for you, Gaurii. 🥹❤️
+  </p>
+
+  <input id="pass" type="password"
+         placeholder="Enter password">
+
+  <br>
+
+  <button onclick="openSurprise()">
+    Open My Surprise 💕
+  </button>
+
+  <p id="wrong" style="display:none;">
+    Wrong password 😜❤️
+  </p>
+
+</div>
+
+
+<div class="box" id="surprise">
+
+  <div class="heart">❤️</div>
+
+  <h1>Happy Birthday Gaurii! 🎂</h1>
+
+  <p>
+    Hey Sweetheart,<br><br>
+
+    Aaj ka din mere liye bhi special hai,
+    kyunki aaj meri favourite person ka birthday hai. 🥹❤️
+
+    <br><br>
+
+    Tumhari smile hamesha aise hi bani rahe,
+    tum hamesha khush raho,
+    aur tumhari har wish poori ho. ✨
+
+    <br><br>
+
+    Sach bolu toh gift mujhe mila hai —
+    <b>tumhare form mein. ❤️</b>
+
+    <br><br>
+
+    Happy Birthday meri Sweetheart! 🎂💗
+
+    <br><br>
+
+    Always yours,<br>
+    <b>Sanket ❤️</b>
+  </p>
+
+</div>
+
+
+<script>
+function openSurprise(){
+
+  var password =
+    document.getElementById("pass").value;
+
+  if(password === "Gaurii29"){
+
+    document.getElementById("login").style.display="none";
+
+    document.getElementById("surprise").style.display="block";
+
+  }else{
+
+    document.getElementById("wrong").style.display="block";
+
+  }
+}
+</script>
+
+</body>
+</html>
