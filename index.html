@@ -1,148 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Sweetheart ❤️</title>
-
+<title>Happy Birthday Gauri ❤️</title>
 <style>
-body{
-  margin:0;
-  background:linear-gradient(135deg,#ff4f81,#7b1fa2);
-  color:white;
-  font-family:Arial,sans-serif;
-  text-align:center;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.box{
-  width:90%;
-  max-width:400px;
-  padding:30px;
-}
-
-h1{font-size:36px;}
-p{font-size:18px;line-height:1.7;}
-
-input{
-  width:85%;
-  padding:14px;
-  border:0;
-  border-radius:30px;
-  text-align:center;
-  font-size:17px;
-}
-
-button{
-  margin-top:20px;
-  padding:14px 25px;
-  border:0;
-  border-radius:30px;
-  background:white;
-  color:#c2185b;
-  font-size:17px;
-  font-weight:bold;
-}
-
-#surprise{
-  display:none;
-}
-
-.heart{
-  font-size:65px;
-}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ff3f8e,#8e2de2);color:white;display:flex;justify-content:center;align-items:center;padding:20px}.box{width:100%;max-width:520px;padding:28px 20px;text-align:center;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.25);border-radius:25px;box-shadow:0 15px 45px rgba(0,0,0,.25);backdrop-filter:blur(8px)}.heart{font-size:60px}h1{font-size:28px;margin:12px 0 18px}p{font-size:16px;line-height:1.8}input{width:100%;padding:14px 16px;border:0;border-radius:30px;font-size:16px;outline:none;margin-top:10px}button{margin-top:16px;padding:14px 24px;border:0;border-radius:30px;background:white;color:#c2185b;font-size:17px;font-weight:bold}#surprise{display:none}.photo{width:100%;max-width:400px;max-height:520px;object-fit:cover;border-radius:20px;display:block;margin:0 auto 20px}
 </style>
 </head>
-
 <body>
-
 <div class="box" id="login">
-
-  <div class="heart">🔐❤️</div>
-
-  <h1>For My Sweetheart</h1>
-
-  <p>
-    This little surprise is only for you, Gaurii. 🥹❤️
-  </p>
-
-  <input id="pass" type="password"
-         placeholder="Enter password">
-
-  <br>
-
-  <button onclick="openSurprise()">
-    Open My Surprise 💕
-  </button>
-
-  <p id="wrong" style="display:none;">
-    Wrong password 😜❤️
-  </p>
-
+<div class="heart">🔐❤️</div><h1>For My Sweetheart</h1>
+<p>This little surprise is only for you, Gauri. 🥺</p>
+<input id="pass" type="password" placeholder="Enter password">
+<button onclick="openSurprise()">Open My Surprise 💕</button>
+<p id="wrong" style="display:none">Wrong password 😜❤️</p>
 </div>
-
-
 <div class="box" id="surprise">
-<img src="https://raw.githubusercontent.com/sanketingle023-code/Birthday-/main/file_000000003c0c82119ee57ab8bb3afdee.png"
-style="width:90%; max-width:400px; border-radius:20px;">
-
-    
-  <div class="heart">❤️</div>
-
-  <h1>Happy Birthday Gaurii! 🎂</h1>
-
-  <p>
-    Hey Sweetheart,<br><br>
-
-    Aaj ka din mere liye bhi special hai,
-    kyunki aaj meri favourite person ka birthday hai. 🥹❤️
-
-    <br><br>
-
-    Tumhari smile hamesha aise hi bani rahe,
-    tum hamesha khush raho,
-    aur tumhari har wish poori ho. ✨
-
-    <br><br>
-
-    Sach bolu toh gift mujhe mila hai —
-    <b>tumhare form mein. ❤️</b>
-
-    <br><br>
-
-    Happy Birthday meri Sweetheart! 🎂💗
-
-    <br><br>
-
-    Always yours,<br>
-    <b>Sanket ❤️</b>
-  </p>
-
+<img class="photo" src="birthday-photo.png" alt="Birthday surprise photo">
+<div class="heart">❤️</div><h1>Happy Birthday Gauri! 🎂</h1>
+<p>Hey Sweetheart,<br><br>Aaj ka din mere liye bhi special hai, kyunki aaj meri favourite person ka birthday hai. 🥺❤️<br><br>Tumhari smile hamesha aisi hi bani rahe, tum hamesha khush raho, aur tumhari har wish poori ho. ✨<br><br>Sach bolu toh gift mujhe mila hai — tumhare form mein. ❤️<br><br>Happy Birthday meri Sweetheart! 🎂💕<br><br>Always yours,<br><b>Sanket ❤️</b></p>
 </div>
-
-
-<script>
-function openSurprise(){
-
-  var password =
-    document.getElementById("pass").value;
-
-  if(password === "Gaurii29"){
-
-    document.getElementById("login").style.display="none";
-
-    document.getElementById("surprise").style.display="block";
-
-  }else{
-
-    document.getElementById("wrong").style.display="block";
-
-  }
-}
-</script>
-
-</body>
-</html>
+<script>function openSurprise(){const password=document.getElementById('pass').value;if(password==='Gauri129'){document.getElementById('login').style.display='none';document.getElementById('surprise').style.display='block'}else{document.getElementById('wrong').style.display='block'}}</script>
+</body></html>
