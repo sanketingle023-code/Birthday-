@@ -6,379 +6,112 @@
 <title>For My Sweetheart ❤️</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #08000f;
-  color: white;
-  overflow: hidden;
+body{
+  font-family:Arial,sans-serif;
+  background:#08000f;
+  color:white;
+  overflow:hidden;
 }
 
-.screen {
-  position: fixed;
-  inset: 0;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 25px;
-  overflow: hidden;
+.screen{
+  position:fixed;
+  inset:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:25px;
+  overflow:hidden;
 }
 
-.screen.active {
-  display: flex;
-  animation: fade 0.8s ease;
+.screen.active{
+  display:flex;
+  animation:fade .8s ease;
 }
 
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes fade{
+  from{opacity:0}
+  to{opacity:1}
 }
 
-.content {
-  width: 100%;
-  max-width: 420px;
-  z-index: 5;
+.content{
+  width:100%;
+  max-width:420px;
+  z-index:5;
 }
 
-h1 {
-  font-size: 38px;
-  margin-bottom: 18px;
+h1{
+  font-size:38px;
+  margin-bottom:18px;
 }
 
-h2 {
-  font-size: 30px;
-  margin-bottom: 15px;
+h2{
+  font-size:30px;
+  margin-bottom:15px;
 }
 
-p {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #ffe8f3;
+p{
+  font-size:18px;
+  line-height:1.7;
+  color:#ffe8f3;
 }
 
-button {
-  border: none;
-  padding: 15px 28px;
-  border-radius: 50px;
-  margin-top: 28px;
-  font-size: 17px;
-  font-weight: bold;
-  background: white;
-  color: #9b176b;
-  box-shadow: 0 8px 25px rgba(255,255,255,.2);
-  cursor: pointer;
+button{
+  border:none;
+  padding:15px 28px;
+  border-radius:50px;
+  margin-top:28px;
+  font-size:17px;
+  font-weight:bold;
+  background:white;
+  color:#9b176b;
+  box-shadow:0 8px 25px rgba(255,255,255,.2);
 }
 
-button:active {
-  transform: scale(.94);
+button:active{
+  transform:scale(.94);
 }
 
-/* First screen */
-#screen1 {
-  background: radial-gradient(circle, #6d164e, #17001f 65%);
+/* PASSWORD */
+#lock{
+  display:flex;
+  background:radial-gradient(circle,#76145a,#16001d 70%);
 }
 
-.heart {
-  font-size: 65px;
-  animation: beat 1.2s infinite;
+.lock-icon{
+  font-size:65px;
+  margin-bottom:15px;
 }
 
-@keyframes beat {
-  50% { transform: scale(1.2); }
+input{
+  width:90%;
+  max-width:300px;
+  padding:15px;
+  margin-top:20px;
+  border:none;
+  border-radius:30px;
+  text-align:center;
+  font-size:17px;
+  outline:none;
 }
 
-/* Lights */
-#screen2 {
-  background: #020104;
+.error{
+  margin-top:15px;
+  color:#ff9fc8;
+  display:none;
 }
 
-.light {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 0 18px #fff;
-  opacity: .2;
+/* FIRST */
+#screen1{
+  background:radial-gradient(circle,#6d164e,#17001f 65%);
 }
 
-.l1 { top: 15%; left: 15%; }
-.l2 { top: 12%; left: 50%; }
-.l3 { top: 20%; right: 15%; }
-.l4 { bottom: 20%; left: 20%; }
-.l5 { bottom: 15%; right: 20%; }
-
-#screen2.lit {
-  background: radial-gradient(circle, #681553, #19001e);
-}
-
-#screen2.lit .light {
-  opacity: 1;
-}
-
-/* Balloons */
-#screen3 {
-  background: linear-gradient(#24002e, #08000f);
-}
-
-.balloon {
-  position: absolute;
-  bottom: -120px;
-  font-size: 60px;
-  animation: float 7s linear infinite;
-}
-
-.b1 { left: 8%; animation-delay: 0s; }
-.b2 { left: 35%; animation-delay: 1.5s; }
-.b3 { right: 25%; animation-delay: 3s; }
-.b4 { right: 5%; animation-delay: 4.5s; }
-
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-120vh); }
-}
-
-/* Cake */
-#screen4 {
-  background: radial-gradient(circle, #571044, #100014);
-}
-
-.cake {
-  font-size: 115px;
-  margin: 15px;
-  animation: cake 1.5s infinite alternate;
-}
-
-@keyframes cake {
-  from { transform: translateY(0); }
-  to { transform: translateY(-8px); }
-}
-
-/* Message */
-#screen5 {
-  background: linear-gradient(135deg, #31001f, #120018);
-}
-
-.letter {
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 25px;
-  padding: 25px;
-  box-shadow: 0 15px 50px rgba(0,0,0,.4);
-  max-height: 75vh;
-  overflow-y: auto;
-}
-
-.letter p {
-  font-size: 17px;
-  text-align: left;
-}
-
-.signature {
-  text-align: right !important;
-  margin-top: 20px;
-  font-weight: bold;
-  color: #ffb7da !important;
-}
-
-/* hearts */
-.floating-heart {
-  position: absolute;
-  bottom: -30px;
-  animation: hearts 6s linear infinite;
-  opacity: .8;
-}
-
-@keyframes hearts {
-  from {
-    transform: translateY(0) rotate(0);
-    opacity: 0;
-  }
-  20% { opacity: 1; }
-  to {
-    transform: translateY(-110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<!-- SCREEN 1 -->
-<section class="screen active" id="screen1">
-  <div class="content">
-    <div class="heart">❤️</div>
-    <h1>Hey Sweetheart...</h1>
-    <p>
-      I made something little special<br>
-      just for you. 🥹
-    </p>
-    <button onclick="next(2)">Open Your Surprise ✨</button>
-  </div>
-</section>
-
-
-<!-- SCREEN 2 -->
-<section class="screen" id="screen2">
-  <span class="light l1"></span>
-  <span class="light l2"></span>
-  <span class="light l3"></span>
-  <span class="light l4"></span>
-  <span class="light l5"></span>
-
-  <div class="content">
-    <h2>It's a little dark here... 🌙</h2>
-    <p>
-      Can you turn on the lights<br>
-      for your birthday surprise?
-    </p>
-    <button onclick="lights()">💡 Turn On The Lights</button>
-  </div>
-</section>
-
-
-<!-- SCREEN 3 -->
-<section class="screen" id="screen3">
-
-  <div class="balloon b1">🎈</div>
-  <div class="balloon b2">🎈</div>
-  <div class="balloon b3">🎈</div>
-  <div class="balloon b4">🎈</div>
-
-  <div class="content">
-    <h1>Happy Birthday! 🎉</h1>
-    <h2>Gaurii ❤️</h2>
-    <p>
-      Today is all about you, Sweetheart. 🥰
-    </p>
-
-    <button onclick="next(4)">There's More 🎁</button>
-  </div>
-</section>
-
-
-<!-- SCREEN 4 -->
-<section class="screen" id="screen4">
-  <div class="content">
-    <div class="cake">🎂</div>
-
-    <h2>Make a Wish, Sweetheart ✨</h2>
-
-    <p>
-      Close your eyes...<br>
-      Make your cutest wish... ❤️
-    </p>
-
-    <button onclick="next(5)">Wish Made! 💕</button>
-  </div>
-</section>
-
-
-<!-- SCREEN 5 -->
-<section class="screen" id="screen5">
-
-  <div class="content">
-    <div class="letter">
-
-      <h2>For My Sweetheart ❤️</h2>
-
-      <p>
-        Happy Birthday, Gaurii! 🎂❤️
-        <br><br>
-
-        Pata nahi kaise, par tum meri life ka woh
-        beautiful part ban gayi ho jiske bina sab kuch
-        thoda incomplete sa lagta hai. 🥹
-        <br><br>
-
-        Tumhari smile, tumhari baatein, tumhara care...
-        tumhari har chhoti si cheez mujhe bahut pasand hai. ❤️
-        <br><br>
-
-        Aaj tumhara birthday hai, lekin honestly,
-        gift toh mujhe mila hai — <b>tumhare form mein.</b> 🥰
-        <br><br>
-
-        Bas aise hi hamesha mere saath rehna,
-        haste rehna aur haan...
-        mujhe thoda pareshan bhi karte rehna. 😂❤️
-        <br><br>
-
-        I hope tumhari life ki har wish poori ho,
-        tum hamesha smile karti raho,
-        aur hum dono ki ye beautiful story
-        aise hi chalti rahe. 💗
-        <br><br>
-
-        <b>Happy Birthday meri Sweetheart! 🎂❤️</b>
-      </p>
-
-      <p class="signature">
-        Always yours,<br>
-        Sanket ❤️
-      </p>
-
-    </div>
-  </div>
-
-</section>
-
-
-<script>
-
-function next(number) {
-
-  document.querySelectorAll(".screen")
-    .forEach(screen => screen.classList.remove("active"));
-
-  document.getElementById("screen" + number)
-    .classList.add("active");
-
-  if(number === 3) {
-    createHearts();
-  }
-
-  if(number === 5) {
-    createHearts();
-  }
-}
-
-function lights() {
-
-  document.getElementById("screen2")
-    .classList.add("lit");
-
-  setTimeout(() => {
-    next(3);
-  }, 1800);
-}
-
-function createHearts() {
-
-  for(let i = 0; i < 15; i++) {
-
-    let heart = document.createElement("div");
-
-    heart.className = "floating-heart";
-    heart.innerHTML = Math.random() > .5 ? "❤️" : "💗";
-
-    heart.style.left = Math.random() * 100 + "%";
-    heart.style.animationDelay = Math.random() * 5 + "s";
-    heart.style.fontSize = (15 + Math.random() * 25) + "px";
-
-    document.body.appendChild(heart);
-
-  }
-}
-
-</script>
-
-</body>
-</html>
+.heart{
+  font-size:65px;
+  animation:beat 1.2s infinite
