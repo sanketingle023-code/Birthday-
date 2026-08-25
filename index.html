@@ -14,7 +14,7 @@ body{
   margin:0;
   min-height:100vh;
   font-family:Arial,sans-serif;
-  background:linear-gradient(135deg,#ff4f91,#9b2bbd);
+  background:linear-gradient(135deg,#ff4f9a,#c72db8);
   color:white;
   text-align:center;
 }
@@ -26,17 +26,14 @@ body{
   padding:40px 20px;
 }
 
-#surprise{
-  display:none;
-}
-
 .heart{
-  font-size:55px;
-  margin:20px 0;
+  font-size:45px;
+  margin-bottom:10px;
 }
 
 h1{
   font-size:30px;
+  margin:15px 0;
 }
 
 p{
@@ -65,27 +62,43 @@ button{
 }
 
 button:active{
-  transform:scale(.95);
-}
-
-.photo{
-  width:100%;
-  max-width:400px;
-  border-radius:20px;
-  margin:15px auto;
-  display:block;
-  box-shadow:0 10px 30px rgba(0,0,0,.3);
+  transform:scale(.96);
 }
 
 #wrong{
   display:none;
   color:#fff;
+  font-weight:bold;
+}
+
+#surprise{
+  display:none;
+}
+
+.photo{
+  width:100%;
+  max-width:370px;
+  border-radius:20px;
+  margin:15px auto;
+  display:block;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.message{
+  margin-top:20px;
+}
+
+.music{
+  margin-top:20px;
+  width:90%;
+  max-width:400px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- LOGIN -->
 <div class="box" id="login">
 
   <div class="heart">🔐❤️</div>
@@ -109,44 +122,66 @@ button:active{
   </button>
 
   <p id="wrong">
-    Wrong password 😜❤️
+    Wrong password ❤️ Try again!
   </p>
 
 </div>
 
 
+<!-- SURPRISE -->
 <div class="box" id="surprise">
 
   <div class="heart">❤️</div>
 
   <h1>Happy Birthday Gauri! 🎂</h1>
 
-  <img class="photo" src="birthday-photo.png">
+  <img
+    class="photo"
+    src="birthday-photo.png"
+    alt="Gauri"
+  >
 
-  <p>
-    Hey Sweetheart, ❤️
-    <br><br>
+  <div class="message">
 
-    Aaj ka din mere liye bhi special hai,
-    kyunki aaj meri favourite person ka birthday hai. 🥺❤️
-    <br><br>
+    <p>
+      Hey Sweetheart, ❤️
+    </p>
 
-    Tumhari smile hamesha aisi hi bani rahe,
-    tum hamesha khush raho,
-    aur tumhari har wish poori ho. ✨
-    <br><br>
+    <p>
+      Aaj ka din mere liye bhi special hai,
+      kyunki aaj meri favourite person ka birthday hai. 🥺❤️
+    </p>
 
-    Sach bolu to gift mujhe mila hai —
-    <b>tumhare form mein.</b> ❤️
-    <br><br>
+    <p>
+      Tumhari smile hamesha aisi hi bani rahe,
+      tum hamesha khush raho,
+      aur tumhari har wish poori ho. ✨
+    </p>
 
-    Happy Birthday meri Sweetheart! 🎂💕
-    <br><br>
+    <p>
+      Sach bolu to gift mujhe mila hai —
+      <b>tumhare form mein.</b> ❤️
+    </p>
 
-    Always yours,
-    <br>
-    <b>Sanket ❤️</b>
-  </p>
+    <p>
+      Happy Birthday meri Sweetheart! 🎂💕
+    </p>
+
+    <p>
+      Always yours,<br>
+      <b>Sanket ❤️</b>
+    </p>
+
+  </div>
+
+  <!-- APNA BANA LE -->
+  <audio id="bgMusic" class="music" loop controls>
+    <source
+      src="Apna Bana Le (PenduJatt.Com.Se).mp3"
+      type="audio/mpeg"
+    >
+    Your browser does not support audio.
+  </audio>
 
 </div>
 
@@ -155,19 +190,28 @@ button:active{
 
 function openSurprise(){
 
-  const password = document.getElementById("pass").value;
+  const password =
+    document.getElementById("pass").value;
 
-  /* YAHAN APNA PASSWORD LIKHNA */
   const correctPassword = "gauri29";
 
   if(password === correctPassword){
 
-    document.getElementById("login").style.display="none";
-    document.getElementById("surprise").style.display="block";
+    document.getElementById("login").style.display = "none";
+
+    document.getElementById("surprise").style.display = "block";
+
+    const music =
+      document.getElementById("bgMusic");
+
+    music.play().catch(function(){
+      // Mobile browsers may require
+      // the user to press play manually.
+    });
 
   }else{
 
-    document.getElementById("wrong").style.display="block";
+    document.getElementById("wrong").style.display = "block";
 
   }
 
